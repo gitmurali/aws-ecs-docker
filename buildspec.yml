@@ -12,7 +12,6 @@ phases:
       - echo log in to Amazon ECR...
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 128910725455.dkr.ecr.us-east-1.amazonaws.com
-      - REPOSITORY_URI=128910725455.dkr.ecr.us-east-1.amazonaws.com/cataloglks
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-6)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
